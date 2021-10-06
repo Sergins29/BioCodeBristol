@@ -1,7 +1,7 @@
 # BioCodeBristol
 Repository for my Bioinformatics Master's
 
-##Author
+## Author
 
 Sergio Antonelli
 
