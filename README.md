@@ -8,13 +8,13 @@ Sergio Antonelli
 ## Workshops 2-8
 
 ### Code folder includes:
-    - Workshop code
-    - Homework
+    Workshop code
+    Homework
 
 ### Data folder includes:
-    - Workshop data
+    Workshop data
     
 ### Two branches so far:
-    - Main
-    - Test branch
+    Main
+    Test branch
 
