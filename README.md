@@ -20,5 +20,5 @@ Sergio Antonelli
     
 ### Here's a frog
 
-![](froggy.gif)
+![](Images/froggy.gif)
 
