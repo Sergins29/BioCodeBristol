@@ -10,6 +10,16 @@ log_vect <- function(x){
   return (new_vect)
 }
 
+#function to calculate standard error
+se <- function(x){
+  std_er <- sd(x)/sqrt(length(x))
+  return (std_er)
+}
+
+#run log function on sorted vector
+new_vect <- log_vect(sorted_a)
+new_vect
+
 #standard error, mean and standard deviation
 #standard error:
 error <- se(new_vect)
