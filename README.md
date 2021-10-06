@@ -15,3 +15,5 @@ Data folder includes:
 Two branches so far:
     - Main
     - Test branch
+
+# Workshops 2-8
