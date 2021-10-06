@@ -5,15 +5,16 @@ Repository for my Bioinformatics Master's
 
 Sergio Antonelli
 
-Code folder includes:
+## Workshops 2-8
+
+### Code folder includes:
     - Workshop code
     - Homework
 
-Data folder includes:
+### Data folder includes:
     - Workshop data
     
-Two branches so far:
+### Two branches so far:
     - Main
     - Test branch
 
-# Workshops 2-8
