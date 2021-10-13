@@ -18,7 +18,7 @@ Sergio Antonelli
     Main
     Test branch
     
-### Here's a frog
+### Here's a frog:
 
 ![](Images/froggy.gif)
 
