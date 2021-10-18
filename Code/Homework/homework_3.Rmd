@@ -1,0 +1,56 @@
+---
+title: "homework_3"
+output:
+  pdf_document: default
+  html_document: default
+---
+#Homework Week 4: Population counts for endangered species
+
+
+First, we install the required packages: devtools, tidyverse and vroom.
+```{r setup, include=FALSE}
+install.packages("devtools", dependencies =TRUE)
+library("devtools")
+install.packages("tidyverse")
+library("tidyverse")
+install_github("r-lib/vroom", force = TRUE)
+library(vroom)
+```
+
+We then import both datasets using vroom:
+```{r pop}
+pop_1 <- vroom("https://raw.githubusercontent.com/chrit88/Bioinformatics_data/master/Workshop%203/to_sort_pop_1.csv")
+head(pop_1)
+```
+
+```{r pop 2}
+pop_2 <- vroom("https://raw.githubusercontent.com/chrit88/Bioinformatics_data/master/Workshop%203/to_sort_pop_2.csv")
+head(pop_2)
+```
+
+Now, we first add a new column to both population datasets to specify which population they are (1 or 2)
+```{r add pop column}
+pop_1$Population=1
+pop_2$Population =2
+```
+
+Then, we can go ahead and use the "merge" function to merge the two data frames, setting the all parameter to TRUE thus including all columns in both data frames.
+
+```{r merge datasets}
+pops <- merge(pop_1,pop_2, all = TRUE)
+```
+
+Finally, we convert the new merged data frame to long format, specifying the 5 columns we want to keep and merging the other columns with new variables "Date" and "Pop count".
+```{r convert to long format}
+pops_long <- pops %>%
+  
+  pivot_longer(cols = -c(species,
+                         primary_threat,
+                         secondary_threat,
+                         tertiary_threat,
+                         Population),
+               names_to = "Date",
+               values_to = "Pop count")
+
+head(pops_long)
+```
