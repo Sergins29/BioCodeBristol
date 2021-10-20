@@ -1,20 +1,15 @@
 ---
-title: "homework_3"
+title: "Homework Week 4: Population counts for endangered species"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
-#Homework Week 4: Population counts for endangered species
-
 
 First, we install the required packages: devtools, tidyverse and vroom.
 ```{r setup, include=FALSE}
-install.packages("devtools", dependencies =TRUE)
 library("devtools")
-install.packages("tidyverse")
 library("tidyverse")
-install_github("r-lib/vroom", force = TRUE)
-library(vroom)
+library("vroom")
 ```
 
 We then import both datasets using vroom:
@@ -52,5 +47,5 @@ pops_long <- pops %>%
                names_to = "Date",
                values_to = "Pop count")
 
-head(pops_long)
+pops_long
 ```

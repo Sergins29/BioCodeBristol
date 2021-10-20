@@ -31,12 +31,12 @@ mt <- tibble::rownames_to_column(mtcars, "model")
 purrr::iwalk(
   split(mt, mt$cyl),
   
-  ~ vroom_write(.x, glue::glue("mtcars_{.y}.csv"), "\t")
+  ~ vroom_write(.x, glue::glue("Data/mtcars_{.y}.csv"), "\t")
 )
 
 #find files in default directory which start with "mtcars" and end in "csv"
 #save them with variable/object "files":
-files1 <- fs::dir_ls(glob = "mtcars*csv")
+files1 <- fs::dir_ls(glob = "Data/mtcars*csv")
 
 files1
 
