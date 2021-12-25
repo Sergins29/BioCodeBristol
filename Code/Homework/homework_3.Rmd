@@ -49,3 +49,11 @@ pops_long <- pops %>%
 
 pops_long
 ```
+
+WEEK 4 HOMEWORK:
+
+Now we start visualizing this data using tidyverse and ggplot
+
+```{r convert to long format}
+
+```

@@ -1,0 +1,267 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\title{Homework Week 4: Population counts for endangered species}
+\author{}
+\date{\vspace{-2.5em}}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Homework Week 4: Population counts for endangered species},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\begin{document}
+\maketitle
+
+First, we install the required packages: devtools, tidyverse and vroom.
+
+We then import both datasets using vroom:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pop\_1 }\OtherTok{\textless{}{-}} \FunctionTok{vroom}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/chrit88/Bioinformatics\_data/master/Workshop\%203/to\_sort\_pop\_1.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 30 Columns: 29
+\end{verbatim}
+
+\begin{verbatim}
+## -- Column specification --------------------------------------------------------
+## Delimiter: "\t"
+## chr  (4): species, primary_threat, secondary_threat, tertiary_threat
+## dbl (24): pop_1_2003-01-01, pop_1_2004-01-01, pop_1_2005-01-01, pop_1_2006-0...
+## lgl  (1): pop_1_1995-01-01
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(pop\_1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 29
+##   species      primary_threat  secondary_threat tertiary_threat `pop_1_2003-01-~
+##   <chr>        <chr>           <chr>            <chr>                      <dbl>
+## 1 Schistidium~ Habitat destru~ <NA>             <NA>                          NA
+## 2 Paraleucobr~ Exploitation    Habitat loss     <NA>                          NA
+## 3 Scapania pa~ Climate change  <NA>             <NA>                          NA
+## 4 Seligera re~ Exploitation    <NA>             <NA>                          NA
+## 5 Tortula sub~ Habitat loss    Pollution        Climate change                96
+## 6 Pohlia mela~ <NA>            <NA>             <NA>                         288
+## # ... with 24 more variables: pop_1_2004-01-01 <dbl>, pop_1_2005-01-01 <dbl>,
+## #   pop_1_2006-01-01 <dbl>, pop_1_2007-01-01 <dbl>, pop_1_2008-01-01 <dbl>,
+## #   pop_1_2009-01-01 <dbl>, pop_1_2010-01-01 <dbl>, pop_1_2011-01-01 <dbl>,
+## #   pop_1_2012-01-01 <dbl>, pop_1_2013-01-01 <dbl>, pop_1_2014-01-01 <dbl>,
+## #   pop_1_2015-01-01 <dbl>, pop_1_2016-01-01 <dbl>, pop_1_2017-01-01 <dbl>,
+## #   pop_1_2018-01-01 <dbl>, pop_1_2019-01-01 <dbl>, pop_1_2000-01-01 <dbl>,
+## #   pop_1_2001-01-01 <dbl>, pop_1_2002-01-01 <dbl>, pop_1_1997-01-01 <dbl>, ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pop\_2 }\OtherTok{\textless{}{-}} \FunctionTok{vroom}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/chrit88/Bioinformatics\_data/master/Workshop\%203/to\_sort\_pop\_2.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 30 Columns: 28
+\end{verbatim}
+
+\begin{verbatim}
+## -- Column specification --------------------------------------------------------
+## Delimiter: "\t"
+## chr  (4): species, primary_threat, secondary_threat, tertiary_threat
+## dbl (21): pop_2_2000-01-01, pop_2_2001-01-01, pop_2_2002-01-01, pop_2_2003-0...
+## lgl  (3): pop_2_1996-01-01, pop_2_1997-01-01, pop_2_1998-01-01
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(pop\_2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 28
+##   species       primary_threat secondary_threat tertiary_threat `pop_2_2000-01-~
+##   <chr>         <chr>          <chr>            <chr>                      <dbl>
+## 1 Sphagnum pal~ <NA>           <NA>             <NA>                          NA
+## 2 Pohlia wahle~ Habitat loss   Pollution        <NA>                          NA
+## 3 Sphagnum les~ Pollution      Exploitation     <NA>                          NA
+## 4 Marchantia p~ <NA>           <NA>             <NA>                          NA
+## 5 Platyhypnidi~ Habitat loss   <NA>             <NA>                          NA
+## 6 Scleropodium~ Pollution      <NA>             <NA>                          NA
+## # ... with 23 more variables: pop_2_2001-01-01 <dbl>, pop_2_2002-01-01 <dbl>,
+## #   pop_2_2003-01-01 <dbl>, pop_2_2004-01-01 <dbl>, pop_2_2005-01-01 <dbl>,
+## #   pop_2_2006-01-01 <dbl>, pop_2_2007-01-01 <dbl>, pop_2_2008-01-01 <dbl>,
+## #   pop_2_2009-01-01 <dbl>, pop_2_2010-01-01 <dbl>, pop_2_2011-01-01 <dbl>,
+## #   pop_2_2012-01-01 <dbl>, pop_2_2013-01-01 <dbl>, pop_2_2014-01-01 <dbl>,
+## #   pop_2_2015-01-01 <dbl>, pop_2_2016-01-01 <dbl>, pop_2_2017-01-01 <dbl>,
+## #   pop_2_2018-01-01 <dbl>, pop_2_2019-01-01 <dbl>, pop_2_1996-01-01 <lgl>, ...
+\end{verbatim}
+
+Now, we first add a new column to both population datasets to specify
+which population they are (1 or 2)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pop\_1}\SpecialCharTok{$}\NormalTok{Population}\OtherTok{=}\DecValTok{1}
+\NormalTok{pop\_2}\SpecialCharTok{$}\NormalTok{Population }\OtherTok{=}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+Then, we can go ahead and use the ``merge'' function to merge the two
+data frames, setting the all parameter to TRUE thus including all
+columns in both data frames.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pops }\OtherTok{\textless{}{-}} \FunctionTok{merge}\NormalTok{(pop\_1,pop\_2, }\AttributeTok{all =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Finally, we convert the new merged data frame to long format, specifying
+the 5 columns we want to keep and merging the other columns with new
+variables ``Date'' and ``Pop count''.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pops\_long }\OtherTok{\textless{}{-}}\NormalTok{ pops }\SpecialCharTok{\%\textgreater{}\%}
+  
+  \FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{cols =} \SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(species,}
+\NormalTok{                         primary\_threat,}
+\NormalTok{                         secondary\_threat,}
+\NormalTok{                         tertiary\_threat,}
+\NormalTok{                         Population),}
+               \AttributeTok{names\_to =} \StringTok{"Date"}\NormalTok{,}
+               \AttributeTok{values\_to =} \StringTok{"Pop count"}\NormalTok{)}
+
+\FunctionTok{head}\NormalTok{(pops\_long)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 7
+##   species    primary_threat secondary_threat tertiary_threat Population Date    
+##   <chr>      <chr>          <chr>            <chr>                <dbl> <chr>   
+## 1 Acaulon t~ Pollution      Exploitation     Climate change           2 pop_1_2~
+## 2 Acaulon t~ Pollution      Exploitation     Climate change           2 pop_1_2~
+## 3 Acaulon t~ Pollution      Exploitation     Climate change           2 pop_1_2~
+## 4 Acaulon t~ Pollution      Exploitation     Climate change           2 pop_1_2~
+## 5 Acaulon t~ Pollution      Exploitation     Climate change           2 pop_1_2~
+## 6 Acaulon t~ Pollution      Exploitation     Climate change           2 pop_1_2~
+## # ... with 1 more variable: Pop count <dbl>
+\end{verbatim}
+
+\end{document}
